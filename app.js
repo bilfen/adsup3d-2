@@ -135,7 +135,7 @@ async function tryEngineChain(file) {
   // Her motor: renkli üretim, sonra (sadece Hunyuan) beyaz yedek
   let lastErr = null;
   for (const p of PROVIDERS) {
-    const fns = p.kind === "hunyuan" ? ["generation_all", "shape_generation"] : ["generate_and_extract_glb"];
+    const fns = p.kind === "hunyuan" ? ["generation_all"] : ["generate_and_extract_glb"]; // beyaz shape_generation yarışa alınmaz
     for (const fn of fns) {
       try {
         setStatus(p.name + " deneniyor…", 25);
